@@ -1,0 +1,71 @@
+<h2 class="text-center mt-4">Reactive Forms Page</h2>
+
+<form class="container mt-4" novalidate [formGroup]="registrationForm">
+  <div>
+    <label for="name-input" class="form-label"> Name: </label>
+    <input
+      class="form-control"
+      type="text"
+      id="name-input"
+      formControlName="fullname"
+      required
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="registrationForm.controls['fullname'].hasError('required')"
+    >
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <label for="email-input" class="form-label"> Email: </label>
+    <input
+      class="form-control"
+      type="email"
+      id="email-input"
+      formControlName="email"
+      required
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="registrationForm.controls['email'].hasError('required')"
+    >
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <label for="contact-input" class="form-label"> Phone: </label>
+    <input
+      class="form-control"
+      type="tel"
+      id="contact-input"
+      formControlName="contact"
+      required
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="registrationForm.controls['contact'].hasError('required')"
+    >
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <label for="password-input" class="form-label"> Password: </label>
+    <input
+      class="form-control"
+      type="password"
+      id="password-input"
+      formControlName="password"
+      required
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="registrationForm.controls['password'].hasError('required')"
+    >
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+</form>

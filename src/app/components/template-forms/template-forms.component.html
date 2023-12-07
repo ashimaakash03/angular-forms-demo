@@ -1,0 +1,72 @@
+<h2 class="text-center mt-4">Template Forms Page</h2>
+
+<form
+  class="needs-validation container mt-4"
+  novalidate
+  #signupForm="ngForm"
+  (ngSubmit)="registerUser(signupForm)"
+>
+  <div>
+    <label for="name-input" class="form-label"> Name: </label>
+    <input
+      class="form-control"
+      type="text"
+      id="name-input"
+      name="fullname"
+      #fullname="ngModel"
+      required
+      ngModel
+    />
+    <div class="invalid-feedback" *ngIf="fullname.hasError('required')">
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <label for="email-input" class="form-label"> Email: </label>
+    <input
+      class="form-control"
+      type="email"
+      id="email-input"
+      name="email"
+      #email="ngModel"
+      required
+      ngModel
+    />
+    <div class="invalid-feedback" *ngIf="email.hasError('required')">
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <label for="contact-input" class="form-label"> Phone: </label>
+    <input
+      class="form-control"
+      type="tel"
+      id="contact-input"
+      name="contact"
+      #contact="ngModel"
+      required
+      ngModel
+    />
+    <div class="invalid-feedback" *ngIf="contact.hasError('required')">
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <label for="password-input" class="form-label"> Password: </label>
+    <input
+      class="form-control"
+      type="password"
+      id="password-input"
+      name="password"
+      #password="ngModel"
+      required
+      ngModel
+    />
+    <div class="invalid-feedback" *ngIf="password.hasError('required')">
+      Must not be empty
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+</form>
